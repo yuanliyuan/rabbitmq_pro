@@ -25,7 +25,7 @@ public class RabbitProducer {
         factory.setUsername("admin");
         factory.setPassword("admin");
         Connection connection = factory.newConnection();
-        Channel channel = factory.newConnection().createChannel();
+        Channel channel = connection.createChannel();
 
         // 创建一个type="direct",持久化,非自动删除的交换器
         channel.exchangeDeclare(EXCHANGE_NAME, "direct", true, false, null);
