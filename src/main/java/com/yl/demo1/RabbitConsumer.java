@@ -26,6 +26,14 @@ public class RabbitConsumer {
         final Channel channel = connection.createChannel();
         channel.basicQos(64);
         Consumer consumer = new DefaultConsumer(channel) {
+            /**
+             * 回调方法,当收到消息后,会自动执行该方法
+             * @param consumerTag 标识
+             * @param envelope 获取一些信息,比如交换机,路由key
+             * @param properties 配置信息
+             * @param body 数据
+             * @throws IOException
+             */
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                 System.out.println("receive message:" + new String(body));
