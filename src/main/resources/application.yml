@@ -1,0 +1,13 @@
+server:
+  port: 9191
+  servlet:
+    context-path: rabbitmq_pro
+spring:
+  application:
+    name: rabbitmq_pro
+  rabbitmq:
+    host: 42.192.98.72
+    port: 5672
+    username: admin
+    password: admin
+
