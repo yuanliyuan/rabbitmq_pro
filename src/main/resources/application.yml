@@ -1,7 +1,7 @@
 server:
   port: 9191
   servlet:
-    context-path: rabbitmq_pro
+    context-path: /rabbitmq_pro
 spring:
   application:
     name: rabbitmq_pro
